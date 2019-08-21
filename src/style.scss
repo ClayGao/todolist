@@ -2,10 +2,26 @@
 @import 'variable.scss';
 
 $bg-color: orange;
-$nav-color: #3CB371;
+$nav-color: gray;
 $main-color: pink;
 $event-title-color: gray;
 $event-context-color: yellowgreen;
+$based-padding: 10px 15px;
+
+@mixin border($border, $radius) {
+    border: $border {
+        radius:  $radius;
+    }
+}
+
+@mixin font($color, $size, $weight, $family) {
+    color: $color;
+    font: {
+        size: $size;
+        weight: $weight;
+        family: $family;
+    }
+}
 
 body {
     background-color: $bg-color;
@@ -15,16 +31,47 @@ body {
 
 nav {
     background-color: $nav-color;
+    height: 50px;
+    @include font(white, 20px,bold, monospace);
+    span {
+        display: inline-block;
+        padding: 13px;
+    }
 }
 
 .container {
     background-color: $main-color;
-    height: 900px;
+    height: auto;
     width: 900px;
     margin: 100px auto;
 }
 
 .todo {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-flow:column  wrap;
+    height: 500px;
+    &-event {
+        height: auto;
+        width: 200px;
+        margin: 8px;
+        
+        @include font(white, 20px,bold, monospace);
+        &-title {
+            background-color: $event-title-color;
+            padding: $based-padding;
+            word-break: break-all;
+        }
+        &-context {
+            background-color: $event-context-color;
+            padding: $based-padding;
+            word-break: break-all;
+        }
+    }
+}
+
+.done {
     &-event {
         height: 300px;
         width: 150px;
