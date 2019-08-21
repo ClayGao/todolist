@@ -1,0 +1,40 @@
+@import 'mixin.scss';
+@import 'variable.scss';
+
+$bg-color: orange;
+$nav-color: #3CB371;
+$main-color: pink;
+$event-title-color: gray;
+$event-context-color: yellowgreen;
+
+body {
+    background-color: $bg-color;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: $nav-color;
+}
+
+.container {
+    background-color: $main-color;
+    height: 900px;
+    width: 900px;
+    margin: 100px auto;
+}
+
+.todo {
+    &-event {
+        height: 300px;
+        width: 150px;
+        &-title {
+            background-color: $event-title-color;
+        }
+        &-context {
+            background-color: $event-context-color;
+        }
+    }
+}
+
+
