@@ -6,7 +6,15 @@ $nav-color: gray;
 $main-color: pink;
 $event-title-color: gray;
 $event-context-color: yellowgreen;
+$key-in-btn-color: rgb(20, 218, 142);
 $based-padding: 10px 15px;
+$heavy-shadow: 0px 8px 7px rgba(0, 0, 0 , 0.7);
+$mid-shadow: 0px 8px 7px rgba(0, 0, 0 , 0.3);
+
+@mixin whole-shadow(){
+    -webkit-filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.7));
+    filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.7))
+}
 
 @mixin border($border, $radius) {
     border: $border {
@@ -37,39 +45,90 @@ nav {
         display: inline-block;
         padding: 13px;
     }
+    box-shadow: $heavy-shadow;
+}
+
+.key-in{   
+    //background-color: blanchedalmond;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 800px;
+    margin: 20px auto;
+    @include whole-shadow();
+    &-block {
+        display: inline-block;
+        height: auto;
+        width: 300px;
+        input {
+            background-color: $event-title-color;
+            padding: $based-padding;
+            word-break: break-all;
+            @include font(white, 20px,bold, monospace);
+            outline: none;
+        }
+        textarea {
+            height: 200px;
+            background-color: $event-context-color;
+            padding: $based-padding;
+            word-break: break-all;
+            @include font(white, 20px,bold, monospace);
+            resize : none;
+            outline: none;
+        }
+    }
+    &-levels {
+        display: inline-block;
+        div {
+            margin:3px;
+            label {
+                @include font(white, 20px,bold, monospace);
+            }
+        }
+        
+    }
+    .key-in-btn {
+        margin: 20px;
+        padding: 5px 20px;
+        background-color: $key-in-btn-color;
+        @include font(white, 20px,bold, monospace);
+        outline: none;
+    }
 }
 
 .container {
     background-color: $main-color;
     height: auto;
     width: 900px;
-    margin: 100px auto;
-}
-
-.todo {
-    display: flex;
-    justify-content: flex-start;
-    align-content: center;
-    flex-flow:column  wrap;
-    height: 500px;
-    &-event {
-        height: auto;
-        width: 200px;
-        margin: 8px;
-        
-        @include font(white, 20px,bold, monospace);
-        &-title {
-            background-color: $event-title-color;
-            padding: $based-padding;
-            word-break: break-all;
-        }
-        &-context {
-            background-color: $event-context-color;
-            padding: $based-padding;
-            word-break: break-all;
+    margin: 20px auto;
+    .todo {
+        display: flex;
+        justify-content: flex-start;
+        align-content: center;
+        flex-flow:column  wrap;
+        height: 500px;
+        @include whole-shadow();
+        &-event {
+            height: auto;
+            width: 200px;
+            margin: 8px;
+            @include font(white, 20px,bold, monospace);
+            &-title {
+                background-color: $event-title-color;
+                padding: $based-padding;
+                word-break: break-all;
+            }
+            &-context {
+                background-color: $event-context-color;
+                padding: $based-padding;
+                word-break: break-all;
+            }
         }
     }
 }
+
+
 
 .done {
     &-event {
