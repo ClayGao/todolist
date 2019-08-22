@@ -20,5 +20,11 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    alias: {
+      //
+      jquery:  'jquery/dist/jquery.min.js' 
+    }
   }
 };
