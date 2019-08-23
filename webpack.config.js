@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './src/index.js', // 引入的檔案
@@ -8,6 +9,19 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        loaders: ["style-loader","css-loader"]
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/i,
+        loader:"file-loader",
+        options:{
+          name:'[name].[ext]',
+          outputPath:'assets/images/'
+          //the images will be emited to dist/assets/images/ folder
+        }
+      },
       {
         test: /\.s[ac]ss$/i,
         use: [
@@ -24,7 +38,20 @@ module.exports = {
   resolve: {
     alias: {
       //
-      jquery:  'jquery/dist/jquery.min.js' 
+      jquery:  'jquery/dist/jquery.min.js',
+      "jquery-ui": "jquery-ui/jquery-ui.js",  
+      'jquery-ui': path.resolve('./node_modules/jquery-ui/ui'),      
+      // bind to modules;
+      modules: path.join(__dirname, "node_modules"),
     }
-  }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      jquery: "jquery",
+      "window.jQuery": "jquery",
+      "window.$": "jquery"
+    })
+  ]
 };

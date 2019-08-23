@@ -14,10 +14,15 @@
   "devDependencies": {
     "css-loader": "^3.2.0",
     "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
+  },
+  "dependencies": {
+    "jquery-ui-bundle": "^1.12.1-migrate",
+    "webpack-jquery-ui": "^2.0.1"
   }
 }

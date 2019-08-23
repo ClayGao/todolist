@@ -15,12 +15,13 @@
                     <textarea></textarea>
                 </div>
                 <div class="key-in-levels">
-                    <div><input class="levels" type="radio" name="level" id="URGENT!"><label for="URGENT!">Do it!</label></div>
-                    <div><input class="levels" type="radio" name="level" id="important"><label for="important">Hurry!</label></div>
-                    <div><input class="levels" type="radio" name="level" id="common"><label for="common">Let's do it.</label></div>
-                    <div><input class="levels" type="radio" name="level" id="record"><label for="record">Just record</label></div>
+                    <div><input class="levels" type="radio" name="level" id="URGENT!" value="red"><label for="URGENT!">Do it!</label></div>
+                    <div><input class="levels" type="radio" name="level" id="important" value="yellow"><label for="important">Hurry!</label></div>
+                    <div><input class="levels" type="radio" name="level" id="common" value="green"><label for="common">Let's do it.</label></div>
+                    <div><input class="levels" type="radio" name="level" id="record" value="gray"><label for="record">Just record</label></div>
                 </div>
                 <input class="btn key-in-btn" type="button" value="Send it">
+                <input class="key-in-level" type="hidden">
             </form>
         </div>
         <div class="container">
