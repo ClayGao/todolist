@@ -29,19 +29,23 @@ nav {
     &-block {
         display: inline-block;
         height: auto;
-        width: 300px;
+        width: 250px;
+        padding: 20px;
         input {
+            width: 100%;
             background-color: $event-title-color;
-            padding: $based-padding;
+            padding: 10px;
             @include font(white, 20px,bold, monospace);
+            border : 0px;
             outline: none;
         }
         textarea {
-            height: 200px;
+            height: 225px;
+            width: 100%;
             background-color: $event-context-color;
-            padding: $based-padding;
+            padding: 10px;
             word-break: break-all;
-            @include font(white, 20px,bold, monospace);
+            @include font(white, 15px,bold, monospace);
             resize : none;
             outline: none;
         }
@@ -56,7 +60,7 @@ nav {
         }       
     }
     .key-in-btn {
-        margin: 20px;
+        margin: 30px 10px;
         padding: 5px 20px;
         background-color: $key-in-btn-color;
         @include font(white, 20px,bold, monospace);
@@ -65,6 +69,12 @@ nav {
 }
 
 .container {
+    .title {
+        @include whole-shadow();
+        h1 {
+            text-align: center;
+        }
+    }
     background-color: $main-color;
     height: auto;
     width: 1000px;
@@ -73,25 +83,42 @@ nav {
         width: 900px;
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-content: flex-start;
         flex-flow:column  wrap;
-        max-height: 600px;
+        max-height: 1000px;
         margin: 40px auto;
         @include whole-shadow();
         &-event {
             height: auto;
             width: 200px;
-            margin: 8px;
-            @include font(white, 20px,bold, monospace);
+            margin: 10px 8px;
+            cursor: pointer;
             &-title {
                 background-color: $event-title-color;
                 padding: $based-padding;
                 word-break: break-all;
+                @include font(white, 20px,bold, monospace);
             }
             &-context {
                 background-color: $event-context-color;
                 padding: $based-padding;
                 word-break: break-all;
+                @include font(white, 14px,bold, monospace);
+            }
+            &-options {
+                display: flex;
+                justify-content: space-evenly;
+                input {
+                    @include font(white, 16px,bold, monospace);
+                    width: 55px;
+                    margin: 5px 0px;
+                    border: 2px solid  { radius: 20px; }
+                    outline: none;
+                    cursor: pointer;
+                }
+                &-complete { background-color: yellowgreen;   }
+                &-update { background-color: orange;  }
+                &-delete { background-color: firebrick; }
             }
         }
     }
@@ -104,22 +131,6 @@ nav {
         max-height: 1200px;
         margin: 40px auto;
         @include whole-shadow();
-        &-event {
-            height: auto;
-            width: 200px;
-            margin: 8px;
-            @include font(white, 20px,bold, monospace);
-            &-title {
-                background-color: $done-title-color;
-                padding: $based-padding;
-                word-break: break-all;
-            }
-            &-context {
-                background-color: $done-context-color;
-                padding: $based-padding;
-                word-break: break-all;
-            }
-        }
     }
 }
 

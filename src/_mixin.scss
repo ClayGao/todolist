@@ -1,6 +1,6 @@
 @mixin whole-shadow(){
-    -webkit-filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.7));
-    filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.7))
+    -webkit-filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.8));
+    filter: drop-shadow(0px 8px 7px rgba(0, 0, 0, 0.8))
 }
 
 @mixin border($border, $radius) {
